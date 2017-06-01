@@ -1,3 +1,20 @@
+PROJECT SPECIFICATION:
+The goal of this homework is to become familiar with the environment in hoare while practicing system calls.
+I’ll like to see the use of perror and getopt in this submission.
+This is Exercise 2.13 (p. 55-56) in your text by Robbins/Robbins. I encourage you to use code from the textbook when you think it applies.
+
+Problem: Implement the logging utility whose template is provided in program 2.13 (p. 56) in the text. Use the specifications given in the text.
+Create a .cpp file and .h file containing all the code for the logging utility. In your main.cpp, have code that then uses that logging utility. All functions in the logging utility should be used at least twice, with a special error message dependent on a command line argument discussed later. Try and come up with creative logging messages that would indicate some error (for amusement value). Note that it might be a good idea to write extra functions from the minimum in Exercise 2.13 to make things easier later on. So if you find yourself repeating some common task to build an error message, write a function for it.
+I do want a standard format for error messages. The format for error messages should be:
+buggy_code: time: Error: Detailed error message
+where buggy_code is actually the name of the executable (argv[0]) that you are trying to debug. It should be appropriately modified if the name of executable is changed without a need to recompile the source. time should be nanoseconds since epoch.
+Your main executable should use command line arguments. You must implement at least 4 command line arguments using getopt:
+-h
+-help
+-n x
+-l filename
+If given the command line arguments -h or -help, a useful message describing the function of all the command line arguments should be displayed. The -n x is a command line parameter that should set a variable in your program to the integer x. The value of this variable should be logged every time your program is run using the logging utility above. The default value of this variable should be 42. That is, if the command line argument -n is not used, it should log a value of 42. The -l filename command will set the name of the log file. The default value for the name of the logfile should be logfile.txt.
+
 To compile, run make.
 After compiling, the program executable can be ran with ./loggertest
 
