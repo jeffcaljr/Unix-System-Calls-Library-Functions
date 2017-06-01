@@ -1,0 +1,6 @@
+To compile, run make.
+After compiling, the program executable can be ran with ./loggertest
+
+Uses C++ 11 chrono, so the g++ command in makefile enables this
+
+To clean project directory, run clean.
